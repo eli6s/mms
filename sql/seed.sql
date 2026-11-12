@@ -47,6 +47,7 @@ WHEN NOT MATCHED THEN
 
 
 -- COULD SAVE THIS FOR LATER TO INSERT IT DURING THE PRESENTATION
+-- NOTE: Jane is inserted first, so she takes employee_id 301 and the users below get 302-304
 MERGE INTO employees AS target
 USING (VALUES (
     'Jane', 'Doe', 'female', '2001-05-30', '2024-09-15',
@@ -61,7 +62,7 @@ WHEN NOT MATCHED THEN
             source.email, source.phone_num, source.home_addr, source.monthly_salary, source.position_id);
 
 -- MANAGER
--- username: edoe-301
+-- username: edoe-302 (password: 1234)
 -- email: elias.doe@mim.museum
 
 MERGE INTO employees AS target
@@ -78,7 +79,7 @@ WHEN NOT MATCHED THEN
             source.email, source.phone_num, source.home_addr, source.monthly_salary, source.position_id);
 
 -- ASSISTANT 1
--- username: mdoe-302
+-- username: mdoe-303 (password: 1234)
 -- email: mark.doe@mim.museum
 
 MERGE INTO employees AS target
@@ -95,7 +96,7 @@ WHEN NOT MATCHED THEN
             source.email, source.phone_num, source.home_addr, source.monthly_salary, source.position_id);
 
 -- CASHIER 1
--- username: jdoe-303
+-- username: jdoe-304 (password: 1234)
 -- email: john.doe@mim.museum
 
 MERGE INTO employees AS target
